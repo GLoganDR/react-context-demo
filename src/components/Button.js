@@ -14,8 +14,8 @@ import ColorContext from '../contexts/ColorContext';
 // }
 
 class Button extends React.Component {
-  renderSubmit = value => {
-    return value === 'english' ? 'Submit' : 'Voorleggen';
+  renderSubmit = language => {
+    return language === 'english' ? 'Submit' : 'Voorleggen';
   };
 
   renderButton = color => {
@@ -29,7 +29,7 @@ class Button extends React.Component {
             Consumer should be used when pulling from multiple different Context Objects inside of a single component.
             this.context should only be used when there is a SINGLE Context in the component.
             */}
-            {value => this.renderSubmit(value)}
+            {({ language }) => this.renderSubmit(language)}
           </LanguageContext.Consumer>
         </button>
     );
